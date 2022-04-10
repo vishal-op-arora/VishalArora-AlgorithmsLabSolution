@@ -45,7 +45,7 @@ public class Currency {
 				try {
 					currencyPayment.put(currencyDenominations[index], ammountToPay / currencyDenominations[index]);
 				} catch (ArithmeticException e) {
-					System.out.println("Divided by zero operation cannot possible");
+					System.out.println("Divided by zero operation cannot possible. Currency denominations can't be zero.");
 				}
 				
 				ammountToPay = ammountToPay % currencyDenominations[index];
