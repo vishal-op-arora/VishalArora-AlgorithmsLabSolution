@@ -42,7 +42,12 @@ public class Currency {
 			
 		for(int index = currencyDenominations.length - 1; index >=0; index--) {
 			if(ammountToPay / currencyDenominations[index] >= 1) {
-				currencyPayment.put(currencyDenominations[index], ammountToPay / currencyDenominations[index]);
+				try {
+					currencyPayment.put(currencyDenominations[index], ammountToPay / currencyDenominations[index]);
+				} catch (ArithmeticException e) {
+					System.out.println("Divided by zero operation cannot possible");
+				}
+				
 				ammountToPay = ammountToPay % currencyDenominations[index];
 			}
 		}
