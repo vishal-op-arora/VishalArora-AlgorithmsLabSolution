@@ -42,6 +42,7 @@ public class Currency {
 			
 		for(int index = currencyDenominations.length - 1; index >=0; index--) {
 			if(ammountToPay / currencyDenominations[index] >= 1) {
+				
 				try {
 					currencyPayment.put(currencyDenominations[index], ammountToPay / currencyDenominations[index]);
 				} catch (ArithmeticException e) {
